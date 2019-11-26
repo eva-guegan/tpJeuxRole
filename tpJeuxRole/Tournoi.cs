@@ -8,11 +8,11 @@ namespace tpJeuxRole
 {
     class Tournoi
     {
-        public void accepterTournoiArme(IAttaquantArme persoUn, IAttaquantArme persoDeux)
+        public void TournoiArme(IAttaquantArme persoUn, IAttaquantArme persoDeux)
         {
 
         }
-        public void accepterTournoiMagie(IAttaquantMagie persoUn, IAttaquantMagie persoDeux)
+        public void TournoiMagie(IAttaquantMagie persoUn, IAttaquantMagie persoDeux)
         {
 
         }

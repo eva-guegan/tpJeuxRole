@@ -17,7 +17,7 @@ namespace tpJeuxRole
             int persoGuerrier = 0;
             int persoMage = 0;
             int persoChaman = 0;
-            int persoVoleur = 0;
+            int persoPaladin = 0;
             bool verification = true;
             #endregion
 
@@ -57,7 +57,7 @@ namespace tpJeuxRole
                                 break;
                             case "4":
                                 hero = new Paladin(choixName);
-                                persoVoleur = 1;
+                                persoPaladin = 1;
                                 verification = false;
                                 break;
                             default:
@@ -77,8 +77,8 @@ namespace tpJeuxRole
             #region Ajouter un objet dans un sac
             while (verification == true)
             {
-                for (int i = 0; i < 2; i++)
-                {
+                //for (int i = 0; i < 2; i++)
+                //{
                     Console.WriteLine("Voulez-vous ajouter un objet dans un sac ? \n");
                     string rep = Console.ReadLine();
 
@@ -111,8 +111,7 @@ namespace tpJeuxRole
                         Console.WriteLine("Vous devez répondre oui ou non");
                         verification = true;
                     }
-                }
-
+                //}
             }
 
             Console.Clear();
@@ -145,9 +144,10 @@ namespace tpJeuxRole
 
             #region Ajout d'équipe
 
-            if (persoGuerrier == 1 || persoVoleur == 1)
+            if (persoGuerrier == 1 || persoPaladin == 1)
             {
                 hero2 = new Guerrier("Florian");
+                //Arme arme = new Arme();
             }
             else if (persoMage == 1 || persoChaman == 1)
             {

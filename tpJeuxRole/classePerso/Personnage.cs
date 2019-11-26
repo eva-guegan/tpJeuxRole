@@ -49,9 +49,13 @@ namespace tpJeuxRole
             }
         }
 
+        //recup arme dans Arme
+        /*public void Armes()
+        {
+
+        }*/
+
         public abstract int getNbSacMax();
         public abstract void display();
-        public abstract void afficherPersoTrier(string nomPerso2);
-
     }
 }

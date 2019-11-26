@@ -6,40 +6,42 @@ using System.Threading.Tasks;
 
 namespace tpJeuxRole
 {
-    class Paladin : Personnage, IAttaquantArme, IAttaquantMagie
+    class Mage : Personnage, IAttaquantMagie
     {
-        public override int getNbSacMax() { return 3; }
-        static int pdvMax = 25;
-        static int pForceMax = 20;
+        static int pdvMax = 15;
+        static int pForceMax = 15;
         static int pAgiliteMax = 15;
+        static int manaMax = 20;
+        private int mana;
+        public override int getNbSacMax() { return 2; }
 
-        public Paladin(string name)
+        public Mage(string name)
         {
             this.nom = name;
             this.pdv = statRandom.Next(1, pdvMax + 1);
             this.pForce = statRandom.Next(1, pForceMax + 1);
             this.pAgilite = statRandom.Next(1, pAgiliteMax + 1);
+            this.mana = statRandom.Next(1, manaMax + 1);
         }
 
         public override void display()
         {
             Console.WriteLine("Nom : " + this.nom);
-            Console.WriteLine("Classe choisi : Voleur \n");
+            Console.WriteLine("Classe choisi : Mage \n");
             Console.WriteLine("Point de vie : " + this.pdv);
             Console.WriteLine("Point de force : " + this.pForce);
             Console.WriteLine("Point d'agilité : " + this.pAgilite);
+            Console.WriteLine("Point de mana : " + this.mana);
+
         }
-        public override void afficherPersoTrier(string nomPerso2)
+
+        public void AttaqueBanaleMagie()
         {
-            SortedSet<string> my_Set1 = new SortedSet<string>();
+        }
 
-            my_Set1.Add(this.nom);
-            my_Set1.Add(nomPerso2);
+        public void AttaqueSpecialeMagie()
+        {
 
-            foreach (var val in my_Set1)
-            {
-                Console.WriteLine(val);
-            }
         }
     }
 }

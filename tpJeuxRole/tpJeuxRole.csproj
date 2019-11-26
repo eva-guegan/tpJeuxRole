@@ -45,19 +45,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Chaman.cs" />
+    <Compile Include="classePerso\Chaman.cs" />
     <Compile Include="Arme.cs" />
     <Compile Include="Tournoi.cs" />
     <Compile Include="Equipe.cs" />
     <Compile Include="Sort.cs" />
     <Compile Include="IAttaquantArme.cs" />
     <Compile Include="IAttaquantMagie.cs" />
-    <Compile Include="Objet.cs" />
-    <Compile Include="Personnage.cs" />
-    <Compile Include="Sac.cs" />
-    <Compile Include="Mage.cs" />
-    <Compile Include="Paladin.cs" />
-    <Compile Include="Guerrier.cs" />
+    <Compile Include="sac\Objet.cs" />
+    <Compile Include="classePerso\Personnage.cs" />
+    <Compile Include="sac\Sac.cs" />
+    <Compile Include="classePerso\Mage.cs" />
+    <Compile Include="classePerso\Paladin.cs" />
+    <Compile Include="classePerso\Guerrier.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

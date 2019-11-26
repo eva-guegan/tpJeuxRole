@@ -31,17 +31,13 @@ namespace tpJeuxRole
             Console.WriteLine("Point d'agilité : " + this.pAgilite);
         }
 
-        public override void afficherPersoTrier(string nomPerso2)
+        public void AttaqueBanaleArme()
         {
-            SortedSet<string> my_Set1 = new SortedSet<string>();
+        }
 
-            my_Set1.Add(this.nom);
-            my_Set1.Add(nomPerso2);
+        public void AttaqueSpecialeArme()
+        {
 
-            foreach (var val in my_Set1)
-            {
-                Console.WriteLine(val);
-            }
         }
     }
 }

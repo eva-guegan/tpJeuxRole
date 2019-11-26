@@ -9,18 +9,31 @@ namespace tpJeuxRole
     class Arme
     {
         private Random random = new Random();
-        public string nomArme;
-        public int degats;
-        public void AttaqueEpee ()
+        public string nomArme { get; set; }
+        public int degats { get; set; }
+
+        public void Epee()
         {
             nomArme = "Epée";
-            degats = random.Next(1, 10);
+            degats = random.Next(1, 10 + 1);
         }
 
-        public void AttaqueMasse()
+        public void Masse()
         {
             nomArme = "Masse";
-            degats = random.Next(1, 10);
+            degats = random.Next(1, 10 + 1);
+        }
+
+        public void Speciale1()
+        {
+            nomArme = "Spéciale 1";
+            degats = random.Next(1, 20 + 1);
+        }
+
+        public void Speciale2()
+        {
+            nomArme = "Spéciale 2";
+            degats = random.Next(1, 20 + 1);
         }
     }
 }

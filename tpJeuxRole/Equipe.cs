@@ -19,6 +19,7 @@ namespace tpJeuxRole
             foreach (var val in team)
             {
                 val.display();
+                Console.WriteLine(" \n");
             }
         }
     }
