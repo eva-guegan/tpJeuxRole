@@ -56,7 +56,7 @@
     <Compile Include="Personnage.cs" />
     <Compile Include="Sac.cs" />
     <Compile Include="Mage.cs" />
-    <Compile Include="Voleur.cs" />
+    <Compile Include="Paladin.cs" />
     <Compile Include="Guerrier.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

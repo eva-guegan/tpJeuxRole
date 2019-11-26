@@ -8,9 +8,18 @@ namespace tpJeuxRole
 {
     class Equipe
     {
-        public void AfficherEquipe()
-        {
+        static SortedSet<Personnage> team = new SortedSet<Personnage>(); 
 
+        public static void AjouterPerso(Personnage p)
+        {
+            team.Add(p);
+        }
+        public static void AfficherEquipe()
+        {
+            foreach (var val in team)
+            {
+                val.display();
+            }
         }
     }
 }

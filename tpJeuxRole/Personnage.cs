@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace tpJeuxRole
 {
-    abstract class Personnage
+    abstract class Personnage : IComparable<Personnage>
     {
         protected Random statRandom = new Random();
         protected int pdv;
@@ -34,6 +34,19 @@ namespace tpJeuxRole
         public void AfficherSacs(int numSac)
         {
             tabSac[numSac-1].Afficher();
+        }
+
+        public int CompareTo(Personnage p)
+        {
+            if (p == null) return 1;
+
+            Personnage other = p as Personnage;
+            if (other != null)
+                return this.nom.CompareTo(other.nom);
+            else
+            {
+                throw new ArgumentException("Object is not a personnage");
+            }
         }
 
         public abstract int getNbSacMax();

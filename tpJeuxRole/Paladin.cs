@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace tpJeuxRole
 {
-    class Voleur : Personnage, IAttaquantArme
+    class Paladin : Personnage, IAttaquantArme, IAttaquantMagie
     {
         public override int getNbSacMax() { return 3; }
-        static int pdvMax = 20;
-        static int pForceMax = 15;
-        static int pAgiliteMax = 20;
+        static int pdvMax = 25;
+        static int pForceMax = 20;
+        static int pAgiliteMax = 15;
 
-        public Voleur(string name)
+        public Paladin(string name)
         {
             this.nom = name;
             this.pdv = statRandom.Next(1, pdvMax + 1);

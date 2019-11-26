@@ -35,7 +35,7 @@ namespace tpJeuxRole
                 {
                     while (verification == true)
                     {
-                        Console.WriteLine("Choissisez une classe : (1: Guerrier, 2: Mage, 3: Chaman ou 4: Voleur)");
+                        Console.WriteLine("Choissisez une classe : (1: Guerrier, 2: Mage, 3: Chaman ou 4: Paladin)");
                         string choixClasse = Console.ReadLine();
 
                         switch (choixClasse)
@@ -56,7 +56,7 @@ namespace tpJeuxRole
                                 verification = false;
                                 break;
                             case "4":
-                                hero = new Voleur(choixName);
+                                hero = new Paladin(choixName);
                                 persoVoleur = 1;
                                 verification = false;
                                 break;
@@ -143,6 +143,27 @@ namespace tpJeuxRole
             }
             #endregion
 
+            #region Ajout d'équipe
+
+            if (persoGuerrier == 1 || persoVoleur == 1)
+            {
+                hero2 = new Guerrier("Florian");
+            }
+            else if (persoMage == 1 || persoChaman == 1)
+            {
+                hero2 = new Mage("Florian");
+            }
+
+            Equipe.AjouterPerso(hero);
+            Equipe.AjouterPerso(hero2);
+
+            Equipe.AfficherEquipe();
+
+            Console.ReadKey();
+
+            #endregion
+
+            /*
             #region préparation tournoi
             verification = true;
 
@@ -187,7 +208,7 @@ namespace tpJeuxRole
             }
             #endregion
 
-            ArrayList listePerso = new ArrayList() { hero, hero2 };
+            ArrayList listePerso = new ArrayList() { hero, hero2 };*/
 
             /*Accéder au tableau
             var perso1 = listePerso[0];
@@ -197,16 +218,11 @@ namespace tpJeuxRole
 
             if (persoGuerrier == 1 || persoVoleur == 1)
             {
-                Console.WriteLine("Voulez vous attaquer ?");
+                Console.WriteLine("Prêt pour le combat ?");
                 string repAttaque = Console.ReadLine();
 
                 if (repAttaque == "Oui" || repAttaque == "oui")
                 {
-                    Console.WriteLine("Quel arme voulez-vous utiliser ? (1:Epée ou 2:Masse");
-                    string repArme = Console.ReadLine();
-
-                    var armeHero2 = "Epée";
-
                     var IAttaquantArme1 = IAttaquantArme(repArme, hero);
                     var IAttaquantArme2 = IAttaquantArme(armeHero2, hero2);
 
@@ -220,24 +236,20 @@ namespace tpJeuxRole
 
                 if (repAttaque == "Oui" || repAttaque == "oui")
                 {
-                    Console.WriteLine("Quel arme voulez-vous utiliser ? (1:Sort 1 ou 2:Sort 2");
-                    string repSort = Console.ReadLine();
-
-                    //random entre sort 1 et sort 2
-                    var sortHero2 = "Sort 1";
-
+                   
                     var IAttaquantMagie1 = IAttaquantMagie(repSort, hero);
                     var IAttaquantMagie2 = IAttaquantMagie(sortHero2, hero2);
 
                     Tournoi.accepterTournoiArme(IAttaquantMagie1, IAttaquantMagie2);
                 } else
                 {
-                    Console.WriteLine("Vous êtes obliger d'attaquer");
+                    Console.WriteLine("Fin du programme");
+                    Console.ReadKey();
                 }
             }
             #endregion
             */
-            Console.ReadKey();
+
         }
     }
 }
