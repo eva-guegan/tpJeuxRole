@@ -9,7 +9,8 @@ namespace tpJeuxRole
     class Sort
     {
         private Random random = new Random();
-        public string nomSort;
+        public string NomSort { get => nomSort; set => nomSort = value; }
+        private string nomSort;
         public int degats;
 
         public void AttaqueSort1()
@@ -27,13 +28,13 @@ namespace tpJeuxRole
         public void SortSpeciale1()
         {
             nomSort = "Spéciale 1";
-            degats = random.Next(1, 20 + 1);
+            degats = random.Next(1, 15 + 1);
         }
 
         public void SortSpeciale2()
         {
             nomSort = "Spéciale 2";
-            degats = random.Next(1, 20 + 1);
+            degats = random.Next(1, 15 + 1);
         }
 
     }

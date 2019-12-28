@@ -12,6 +12,7 @@ namespace tpJeuxRole
         static int pdvMax = 20;
         static int pForceMax = 15;
         static int pAgiliteMax = 15;
+        Sort sort = new Sort();
 
         public Chaman(string name)
         {
@@ -19,6 +20,7 @@ namespace tpJeuxRole
             this.Pdv = statRandom.Next(1, pdvMax + 1);
             this.pForce = statRandom.Next(1, pForceMax + 1);
             this.pAgilite = statRandom.Next(1, pAgiliteMax + 1);
+            sort.AttaqueSort1();
         }
 
         public override void display()
@@ -32,18 +34,21 @@ namespace tpJeuxRole
 
         public override void AttaqueBanaleArme()
         {
+
         }
 
         public override int getDegatsArme()
         {
-            Sort sort = new Sort();
-            sort.AttaqueSort1();
-
-            return sort.degats;
+            return 0;
+        }
+        public override void AttaqueBanaleMagie()
+        {
+            Console.WriteLine(sort.NomSort + ": " + sort.degats + "\n");
         }
 
-        public void AttaqueBanaleMagie()
+        public override int getDegatsSort()
         {
+            return sort.degats;
         }
 
         public void AttaqueSpecialeMagie()

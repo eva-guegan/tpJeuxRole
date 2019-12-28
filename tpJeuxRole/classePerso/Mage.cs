@@ -8,12 +8,13 @@ namespace tpJeuxRole
 {
     class Mage : Personnage, IAttaquantMagie
     {
+        public override int getNbSacMax() { return 2; }
         static int pdvMax = 15;
         static int pForceMax = 15;
         static int pAgiliteMax = 15;
         static int manaMax = 20;
         private int mana;
-        public override int getNbSacMax() { return 2; }
+        Sort sort = new Sort();
 
         public Mage(string name)
         {
@@ -22,6 +23,7 @@ namespace tpJeuxRole
             this.pForce = statRandom.Next(1, pForceMax + 1);
             this.pAgilite = statRandom.Next(1, pAgiliteMax + 1);
             this.mana = statRandom.Next(1, manaMax + 1);
+            sort.AttaqueSort1();
         }
 
         public override void display()
@@ -37,19 +39,22 @@ namespace tpJeuxRole
 
         public override void AttaqueBanaleArme()
         {
+
         }
 
         public override int getDegatsArme()
         {
-            Sort sort = new Sort();
-            sort.AttaqueSort1();
-
-            return sort.degats;
+            return 0;
         }
 
-        public void AttaqueBanaleMagie()
+        public override void AttaqueBanaleMagie()
         {
+            Console.WriteLine(sort.NomSort + ": " + sort.degats + "\n");
+        }
 
+        public override int getDegatsSort()
+        {
+            return sort.degats;
         }
 
         public void AttaqueSpecialeMagie()

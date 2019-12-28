@@ -12,6 +12,8 @@ namespace tpJeuxRole
         static int pdvMax = 25;
         static int pForceMax = 20;
         static int pAgiliteMax = 15;
+        Arme arme = new Arme();
+        Sort sort = new Sort();
 
         public Paladin(string name)
         {
@@ -19,6 +21,8 @@ namespace tpJeuxRole
             this.Pdv = statRandom.Next(1, pdvMax + 1);
             this.pForce = statRandom.Next(1, pForceMax + 1);
             this.pAgilite = statRandom.Next(1, pAgiliteMax + 1);
+            arme.Epee();
+            sort.AttaqueSort1();
         }
 
         public override void display()
@@ -32,13 +36,11 @@ namespace tpJeuxRole
 
         public override void AttaqueBanaleArme()
         {
+            Console.WriteLine(arme.NomArme + ": " + arme.degats + "\n");
         }
 
         public override int getDegatsArme()
         {
-            Arme arme = new Arme();
-            arme.Epee();
-
             return arme.degats;
         }
 
@@ -47,8 +49,14 @@ namespace tpJeuxRole
 
         }
 
-        public void AttaqueBanaleMagie()
+        public override void AttaqueBanaleMagie()
         {
+            Console.WriteLine(sort.NomSort + ": " + sort.degats + "\n");
+        }
+
+        public override int getDegatsSort()
+        {
+            return sort.degats;
         }
 
         public void AttaqueSpecialeMagie()

@@ -35,13 +35,22 @@ namespace tpJeuxRole
 
         public override void AttaqueBanaleArme()
         {
-
             Console.WriteLine(arme.NomArme + ": " + arme.degats + "\n");
         }
 
         public override int getDegatsArme()
         {
             return arme.degats;
+        }
+
+        public override void AttaqueBanaleMagie()
+        {
+
+        }
+
+        public override int getDegatsSort()
+        {
+            return 0;
         }
 
         public void AttaqueSpecialeArme()
