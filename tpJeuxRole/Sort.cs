@@ -23,13 +23,13 @@ namespace tpJeuxRole
             degats = random.Next(1, 10 + 1);
         }
 
-        public void Speciale1()
+        public void SortSpeciale1()
         {
             nomSort = "Spéciale 1";
             degats = random.Next(1, 20 + 1);
         }
 
-        public void Speciale2()
+        public void SortSpeciale2()
         {
             nomSort = "Spéciale 2";
             degats = random.Next(1, 20 + 1);

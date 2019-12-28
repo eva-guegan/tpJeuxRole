@@ -9,7 +9,8 @@ namespace tpJeuxRole
     abstract class Personnage : IComparable<Personnage>
     {
         protected Random statRandom = new Random();
-        protected int pdv;
+        public int Pdv { get => pdv; set => pdv = value; }
+        private int pdv;
         protected int pForce;
         protected int pAgilite;
         protected string nom;
@@ -49,13 +50,8 @@ namespace tpJeuxRole
             }
         }
 
-        //recup arme dans Arme
-        /*public void Armes()
-        {
-
-        }*/
-
         public abstract int getNbSacMax();
         public abstract void display();
+        public abstract void AttaqueBanaleArme();
     }
 }

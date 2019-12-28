@@ -16,7 +16,7 @@ namespace tpJeuxRole
         public Chaman(string name)
         {
             this.nom = name;
-            this.pdv = statRandom.Next(1, pdvMax + 1);
+            this.Pdv = statRandom.Next(1, pdvMax + 1);
             this.pForce = statRandom.Next(1, pForceMax + 1);
             this.pAgilite = statRandom.Next(1, pAgiliteMax + 1);
         }
@@ -25,9 +25,13 @@ namespace tpJeuxRole
         {
             Console.WriteLine("Nom : " + this.nom);
             Console.WriteLine("Classe choisi : Chaman \n");
-            Console.WriteLine("Point de vie : " + this.pdv);
+            Console.WriteLine("Point de vie : " + this.Pdv);
             Console.WriteLine("Point de force : " + this.pForce);
             Console.WriteLine("Point d'agilité : " + this.pAgilite);
+        }
+
+        public override void AttaqueBanaleArme()
+        {
         }
 
         public void AttaqueBanaleMagie()

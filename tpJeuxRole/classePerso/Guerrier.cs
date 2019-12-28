@@ -16,7 +16,7 @@ namespace tpJeuxRole
         public Guerrier(string name)
         {
             this.nom = name;
-            this.pdv = statRandom.Next(1, pdvMax+1);
+            this.Pdv = statRandom.Next(1, pdvMax+1);
             this.pForce = statRandom.Next(1, pForceMax + 1);
             this.pAgilite = statRandom.Next(1, pAgiliteMax + 1);
         }
@@ -26,13 +26,17 @@ namespace tpJeuxRole
         {
             Console.WriteLine("Nom : " + this.nom);
             Console.WriteLine("Classe choisi : Guerrier \n");
-            Console.WriteLine("Point de vie : " +this.pdv);
+            Console.WriteLine("Point de vie : " +this.Pdv);
             Console.WriteLine("Point de force : " + this.pForce);
             Console.WriteLine("Point d'agilité : " + this.pAgilite);
         }
 
-        public void AttaqueBanaleArme()
+        public override void AttaqueBanaleArme()
         {
+            Arme arme = new Arme();
+            arme.Epee();
+            Console.WriteLine(arme.NomArme + "\n");
+            Console.WriteLine(arme.degats + "\n");
         }
 
         public void AttaqueSpecialeArme()

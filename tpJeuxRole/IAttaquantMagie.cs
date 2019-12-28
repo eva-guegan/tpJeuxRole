@@ -8,8 +8,8 @@ namespace tpJeuxRole
 {
     interface IAttaquantMagie
     {
-        void AttaqueBanale();
+        void AttaqueBanaleMagie();
 
-        void AttaqueSpeciale();
+        void AttaqueSpecialeMagie();
     }
 }

@@ -142,12 +142,11 @@ namespace tpJeuxRole
             }
             #endregion
 
-            #region Ajout d'équipe
+            #region Ajout + affichage d'équipe
 
             if (persoGuerrier == 1 || persoPaladin == 1)
             {
                 hero2 = new Guerrier("Florian");
-                //Arme arme = new Arme();
             }
             else if (persoMage == 1 || persoChaman == 1)
             {
@@ -157,14 +156,10 @@ namespace tpJeuxRole
             Equipe.AjouterPerso(hero);
             Equipe.AjouterPerso(hero2);
 
-            Equipe.AfficherEquipe();
-
-            Console.ReadKey();
-
+            //Equipe.AfficherEquipe();
             #endregion
 
-            /*
-            #region préparation tournoi
+            #region Tournoi
             verification = true;
 
             while (verification == true)
@@ -174,82 +169,43 @@ namespace tpJeuxRole
 
                 if (repCombat == "oui" || repCombat == "Oui")
                 {
-                    Console.WriteLine("Vous avez accepter \n");
-
-                    Console.WriteLine("Choississez le nom de votre adversaire");
-                    string choixName2 = Console.ReadLine();
-
-                    Console.WriteLine("Création aléatoire d'un personnage ... \n");
-                    if (persoGuerrier == 1 || persoVoleur == 1)
-                    {
-                        hero2 = new Guerrier(choixName2);
-                    } else if (persoMage == 1 || persoChaman == 1)
-                    {
-                        hero2 = new Mage(choixName2);
-                    }
+                    Console.WriteLine("Vous avez accepter de combattre \n");
 
                     Console.WriteLine("Voici votre adversaire : ");
                     hero2.display();
 
                     Console.WriteLine("Taper une touche pour continuer");
                     Console.ReadKey();
-
                     Console.Clear();
-                    //stocker le nom du perso 2 dans le sorted set / utile ?
-                    Console.WriteLine("\nVoici les participants au tournoi :  \n");
-                    hero.afficherPersoTrier(choixName2);
+
+                    //phase d'attaque
+                    if (persoGuerrier == 1 || persoPaladin == 1)
+                    {
+                        //Tournoi arme
+                        Tournoi t1 = new Tournoi();
+                        t1.TournoiArme(hero, hero2);
+                    }
+                    else if (persoMage == 1 || persoChaman == 1 || persoPaladin == 1)
+                    {
+                        //Tournoi magie
+                        Tournoi t2 = new Tournoi();
+                        t2.TournoiMagie(hero, hero2);
+                    }
+
 
                     verification = false;
                 }
                 else if (repCombat == "non" || repCombat == "Non")
                 {
-                    Console.WriteLine("Vous êtes obligé d'affronter votre adversaire");   
-                }
-            }
-            #endregion
-
-            ArrayList listePerso = new ArrayList() { hero, hero2 };*/
-
-            /*Accéder au tableau
-            var perso1 = listePerso[0];
-            var perso2 = listePerso[1];*/
-            /*
-            #region tournoi
-
-            if (persoGuerrier == 1 || persoVoleur == 1)
-            {
-                Console.WriteLine("Prêt pour le combat ?");
-                string repAttaque = Console.ReadLine();
-
-                if (repAttaque == "Oui" || repAttaque == "oui")
-                {
-                    var IAttaquantArme1 = IAttaquantArme(repArme, hero);
-                    var IAttaquantArme2 = IAttaquantArme(armeHero2, hero2);
-
-                    Tournoi.accepterTournoiArme(IAttaquantArme1, IAttaquantArme2);
-                }
-            }
-            else if (persoMage == 1 || persoChaman == 1)
-            {
-                Console.WriteLine("Voulez vous attaquer ?");
-                string repAttaque = Console.ReadLine();
-
-                if (repAttaque == "Oui" || repAttaque == "oui")
-                {
-                   
-                    var IAttaquantMagie1 = IAttaquantMagie(repSort, hero);
-                    var IAttaquantMagie2 = IAttaquantMagie(sortHero2, hero2);
-
-                    Tournoi.accepterTournoiArme(IAttaquantMagie1, IAttaquantMagie2);
-                } else
-                {
-                    Console.WriteLine("Fin du programme");
+                    Console.WriteLine("Vous êtes obligé d'affronter votre adversaire");
+                    verification = false;
                     Console.ReadKey();
                 }
             }
             #endregion
-            */
 
+            Console.WriteLine("Le programme est fini ! \n");
+            Console.ReadKey();
         }
     }
 }

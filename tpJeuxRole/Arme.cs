@@ -9,7 +9,8 @@ namespace tpJeuxRole
     class Arme
     {
         private Random random = new Random();
-        public string nomArme { get; set; }
+        public string NomArme { get => nomArme; set => nomArme = value; }
+        private string nomArme;
         public int degats { get; set; }
 
         public void Epee()
@@ -24,13 +25,13 @@ namespace tpJeuxRole
             degats = random.Next(1, 10 + 1);
         }
 
-        public void Speciale1()
+        public void ArmeSpeciale1()
         {
             nomArme = "Spéciale 1";
             degats = random.Next(1, 20 + 1);
         }
 
-        public void Speciale2()
+        public void ArmeSpeciale2()
         {
             nomArme = "Spéciale 2";
             degats = random.Next(1, 20 + 1);
