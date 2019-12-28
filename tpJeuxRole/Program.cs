@@ -178,7 +178,7 @@ namespace tpJeuxRole
                     Console.ReadKey();
                     Console.Clear();
 
-                    //phase d'attaque
+                    #region attaque
                     if (persoGuerrier == 1 || persoPaladin == 1)
                     {
                         //Tournoi arme
@@ -191,13 +191,12 @@ namespace tpJeuxRole
                         Tournoi t2 = new Tournoi();
                         t2.TournoiMagie(hero, hero2);
                     }
-
-
+                    #endregion
                     verification = false;
                 }
                 else if (repCombat == "non" || repCombat == "Non")
                 {
-                    Console.WriteLine("Vous êtes obligé d'affronter votre adversaire");
+                    Console.WriteLine("Vous avez choisi de ne pas combattre");
                     verification = false;
                     Console.ReadKey();
                 }

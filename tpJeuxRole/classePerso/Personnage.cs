@@ -53,5 +53,7 @@ namespace tpJeuxRole
         public abstract int getNbSacMax();
         public abstract void display();
         public abstract void AttaqueBanaleArme();
+
+        public abstract int getDegatsArme();
     }
 }

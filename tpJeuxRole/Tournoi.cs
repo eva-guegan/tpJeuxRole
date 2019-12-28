@@ -13,23 +13,36 @@ namespace tpJeuxRole
             int vieP1 = persoUn.Pdv; //get
             int vieP2 = persoDeux.Pdv; //get
 
-            while (vieP1 > 0 || vieP2 > 0)
+            while (vieP1 > 0 && vieP2 > 0)
             {
                 //récup dégâts arme p1
+                Console.WriteLine("Votre arme : \n");
                 persoUn.AttaqueBanaleArme();
-
-                //vieP1 - dégâts arme p1
-                //persoUn.NomArme;
-
-                //Pdv1 - dégâts arme p1
-
-                //récup dégâts arme p2
-                persoDeux.AttaqueBanaleArme();
-
-                //vieP2 - dégâts arme p2
-                //Pdv2 - dégâts arme p1
-
                 Console.ReadKey();
+
+                Console.WriteLine("Vous attaquez l'ennemi ! \n");
+                Console.ReadKey();
+
+                // Calcul dégats p2
+                int vieP2Attaquer = vieP2 - persoDeux.getDegatsArme();
+                vieP2 = vieP2Attaquer;
+
+                Console.WriteLine("Sa vie restante :" + vieP2 + "\n");
+                Console.ReadKey();
+
+                Console.WriteLine("L'ennemi riposte ! \n");
+
+                Console.WriteLine("Son arme : \n");
+                persoDeux.AttaqueBanaleArme();
+                Console.ReadKey();
+
+                int vieP1Attaquer = vieP1 - persoUn.getDegatsArme();
+                vieP1 = vieP1Attaquer;
+
+                Console.WriteLine("Votre vie restante :" + vieP1 + "\n");
+                Console.ReadKey();
+
+                Console.Clear();
             }
         }
 

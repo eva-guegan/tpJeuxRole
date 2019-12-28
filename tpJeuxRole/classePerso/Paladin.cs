@@ -34,6 +34,14 @@ namespace tpJeuxRole
         {
         }
 
+        public override int getDegatsArme()
+        {
+            Arme arme = new Arme();
+            arme.Epee();
+
+            return arme.degats;
+        }
+
         public void AttaqueSpecialeArme()
         {
 

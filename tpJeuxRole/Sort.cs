@@ -10,7 +10,8 @@ namespace tpJeuxRole
     {
         private Random random = new Random();
         public string nomSort;
-        static int degats;
+        public int degats;
+
         public void AttaqueSort1()
         {
             nomSort = "Pétrification";

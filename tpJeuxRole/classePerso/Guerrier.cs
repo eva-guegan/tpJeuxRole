@@ -12,6 +12,7 @@ namespace tpJeuxRole
         static int pdvMax = 30;
         static int pForceMax = 20;
         static int pAgiliteMax = 15;
+        Arme arme = new Arme();
 
         public Guerrier(string name)
         {
@@ -19,6 +20,7 @@ namespace tpJeuxRole
             this.Pdv = statRandom.Next(1, pdvMax+1);
             this.pForce = statRandom.Next(1, pForceMax + 1);
             this.pAgilite = statRandom.Next(1, pAgiliteMax + 1);
+            arme.Epee();
         }
 
 
@@ -33,10 +35,13 @@ namespace tpJeuxRole
 
         public override void AttaqueBanaleArme()
         {
-            Arme arme = new Arme();
-            arme.Epee();
-            Console.WriteLine(arme.NomArme + "\n");
-            Console.WriteLine(arme.degats + "\n");
+
+            Console.WriteLine(arme.NomArme + ": " + arme.degats + "\n");
+        }
+
+        public override int getDegatsArme()
+        {
+            return arme.degats;
         }
 
         public void AttaqueSpecialeArme()

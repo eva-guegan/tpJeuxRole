@@ -34,6 +34,14 @@ namespace tpJeuxRole
         {
         }
 
+        public override int getDegatsArme()
+        {
+            Sort sort = new Sort();
+            sort.AttaqueSort1();
+
+            return sort.degats;
+        }
+
         public void AttaqueBanaleMagie()
         {
         }
