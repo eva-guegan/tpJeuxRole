@@ -16,13 +16,15 @@ namespace tpJeuxRole
         public void Epee()
         {
             nomArme = "Epée";
+            //degats = random.Next(1, 10 + 1);
             degats = 5;
         }
 
         public void Masse()
         {
             nomArme = "Masse";
-            degats = random.Next(1, 10 + 1);
+            //degats = random.Next(1, 10 + 1);
+            degats = 5;
         }
 
         public void ArmeSpeciale1()

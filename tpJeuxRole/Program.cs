@@ -77,23 +77,15 @@ namespace tpJeuxRole
             #region Ajouter un objet dans un sac
             while (verification == true)
             {
-                //for (int i = 0; i < 2; i++)
-                //{
-                    Console.WriteLine("Voulez-vous ajouter un objet dans un sac ? \n");
-                    string rep = Console.ReadLine();
+                Console.WriteLine("Voulez-vous ajouter un objet dans un sac ? \n");
+                string rep = Console.ReadLine();
 
-                    if (rep == "Oui" || rep == "oui")
+                if (rep == "Oui" || rep == "oui")
+                {
+                    try
                     {
                         Console.WriteLine("Choissisez dans quel sac vous voulez ajouter un objet : entre 1 et " + hero.getNbSacMax() + "\n");
                         string repSac = Console.ReadLine();
-
-                        // Faire boucler 
-                        if (Convert.ToInt32(repSac) > hero.getNbSacMax() || Convert.ToInt32(repSac) < 1)
-                        {
-                            Console.WriteLine("Vous ne possédez pas ce nombre de sacs \n");
-                            //verification = false;
-                            break;
-                        } //options si texte rentrer
 
                         Console.WriteLine("Quel objet voulez-vous ajouter ? \n");
                         string repObjet = Console.ReadLine();
@@ -101,17 +93,24 @@ namespace tpJeuxRole
                         hero.AjouterObjetChoisi(Convert.ToInt32(repSac), new Objet(repObjet));
 
                     }
+                    catch (IndexOutOfRangeException e)
+                    {
+                        Console.WriteLine("Vous ne possédez pas ce nombre de sacs \n");
+                    }/* catch(MyException ex)
+                    {
+                        Console.WriteLine("Une erreur c'est produite");
+                    }*/
+                }
 
-                    else if (rep == "Non" || rep == "non")
-                    {
-                        verification = false;
-                    }
-                    else
-                    {
-                        Console.WriteLine("Vous devez répondre oui ou non");
-                        verification = true;
-                    }
-                //}
+                else if (rep == "Non" || rep == "non")
+                {
+                    verification = false;
+                }
+                else
+                {
+                    Console.WriteLine("Vous devez répondre oui ou non");
+                    verification = true;
+                }
             }
 
             Console.Clear();
@@ -203,7 +202,7 @@ namespace tpJeuxRole
             }
             #endregion
 
-            Console.WriteLine("Le programme est fini ! \n");
+            Console.WriteLine("Le combat est fini ! \n");
             Console.ReadKey();
         }
     }

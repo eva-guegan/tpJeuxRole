@@ -16,13 +16,15 @@ namespace tpJeuxRole
         public void AttaqueSort1()
         {
             nomSort = "Pétrification";
-            degats = random.Next(1, 10 + 1);
+            //degats = random.Next(1, 10 + 1);
+            degats = 5;
         }
 
         public void AttaqueSort2()
         {
             nomSort = "Sort 2";
-            degats = random.Next(1, 10 + 1);
+            //degats = random.Next(1, 10 + 1);
+            degats = 5;
         }
 
         public void SortSpeciale1()
