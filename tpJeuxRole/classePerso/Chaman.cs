@@ -31,16 +31,7 @@ namespace tpJeuxRole
             Console.WriteLine("Point de force : " + this.pForce);
             Console.WriteLine("Point d'agilité : " + this.pAgilite);
         }
-
-        public override void AttaqueBanaleArme()
-        {
-
-        }
-
-        public override int getDegatsArme()
-        {
-            return 0;
-        }
+        
         public override void AttaqueBanaleMagie()
         {
             Console.WriteLine(sort.NomSort + ": " + sort.degats + "\n");
@@ -51,7 +42,21 @@ namespace tpJeuxRole
             return sort.degats;
         }
 
-        public void AttaqueSpecialeMagie()
+        public override void AttaqueSpecialeMagie()
+        {
+
+        }
+
+        public override void AttaqueBanaleArme()
+        {
+        }
+
+        public override int getDegatsArme()
+        {
+            return 0;
+        }
+
+        public override void AttaqueSpecialeArme()
         {
 
         }

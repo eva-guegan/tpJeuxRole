@@ -44,7 +44,7 @@ namespace tpJeuxRole
             return arme.degats;
         }
 
-        public void AttaqueSpecialeArme()
+        public override void AttaqueSpecialeArme()
         {
 
         }
@@ -59,7 +59,7 @@ namespace tpJeuxRole
             return sort.degats;
         }
 
-        public void AttaqueSpecialeMagie()
+        public override void AttaqueSpecialeMagie()
         {
 
         }

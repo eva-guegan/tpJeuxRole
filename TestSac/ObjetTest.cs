@@ -8,16 +8,10 @@ namespace TestSac
     {
         private string nom;
 
-        [TestMethod]
-        public void Objet(string nom)
+        public ObjetTest()
         {
-            this.nom = nom;
+            nom = "Test objet";
         }
 
-        [TestMethod]
-        public void AfficherNomObjetTest()
-        {
-            Console.WriteLine("- " + this.nom);
-        }
     }
 }

@@ -25,10 +25,10 @@ namespace tpJeuxRole
             {
                 tabSac[i] = new Sac();
             }
-
         }
         public void AjouterObjetChoisi(int numSac, Objet objChoisi)
         {
+            //si dépasse 5 alors throw exception
             tabSac[numSac-1].Ajouter(objChoisi);
         }
 
@@ -52,9 +52,12 @@ namespace tpJeuxRole
 
         public abstract int getNbSacMax();
         public abstract void display();
-        public abstract void AttaqueBanaleArme();
         public abstract int getDegatsArme();
+        public abstract void AttaqueBanaleArme();
+        public abstract void AttaqueSpecialeArme();
         public abstract void AttaqueBanaleMagie();
         public abstract int getDegatsSort();
+        public abstract void AttaqueSpecialeMagie();
+
     }
 }

@@ -43,9 +43,13 @@ namespace tpJeuxRole
             return arme.degats;
         }
 
-        public override void AttaqueBanaleMagie()
+        public override void AttaqueSpecialeArme()
         {
 
+        }
+
+        public override void AttaqueBanaleMagie()
+        {
         }
 
         public override int getDegatsSort()
@@ -53,7 +57,7 @@ namespace tpJeuxRole
             return 0;
         }
 
-        public void AttaqueSpecialeArme()
+        public override void AttaqueSpecialeMagie()
         {
 
         }

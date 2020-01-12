@@ -7,26 +7,22 @@ namespace TestSac
     class SacTest
     {
         Stack<ObjetTest> contenuSac = new Stack<ObjetTest>(5);
+        ObjetTest TestObjet = new ObjetTest();
 
         [TestMethod]
         public void AjouterTest(ObjetTest objet)
         {
+            //ARRANGE : initialise le contexte d'appel méthode = objets passés en paramètre
+            //Ex : b.AngleIndique = 0;
+            //objet = "TestObjet";
+
+            //ACT : appelle méthode testée
+            //Ex : b.rotation(angle);
             contenuSac.Push(objet);
-        }
 
-        [TestMethod]
-        public void AfficherTest()
-        {
-            foreach (ObjetTest nom in contenuSac)
-            {
-                nom.AfficherNomObjetTest();
-            }
-        }
-
-        [TestMethod]
-        public void SupprimerTest()
-        {
-            contenuSac.Pop();
+            //ASSERT : vérifie un prédicat
+            //Ex : Assert.AreEqual(b.AngleIndique, expectedAngle);
+            Assert.IsNotNull(contenuSac);
         }
     }
 }

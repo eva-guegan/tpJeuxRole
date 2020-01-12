@@ -21,6 +21,8 @@ namespace tpJeuxRole
             bool verification = true;
             #endregion
 
+            //dans le constructeur mettre le code du programme puis appeler avec ex: Team t = new Team();
+
             #region Création du premier personnage
             while (verification == true)
             {
@@ -31,7 +33,8 @@ namespace tpJeuxRole
                 {
                     Console.WriteLine("Vous n'avez pas rentrez de nom");
                     verification = true;
-                } else
+                }
+                else
                 {
                     while (verification == true)
                     {
@@ -96,10 +99,15 @@ namespace tpJeuxRole
                     catch (IndexOutOfRangeException e)
                     {
                         Console.WriteLine("Vous ne possédez pas ce nombre de sacs \n");
-                    }/* catch(MyException ex)
+                    } 
+                   /* catch (MyException e)
+                    {
+                        Console.WriteLine("Mon exception" + e "\n");
+                    }*/
+                    catch(Exception e)
                     {
                         Console.WriteLine("Une erreur c'est produite");
-                    }*/
+                    }
                 }
 
                 else if (rep == "Non" || rep == "non")
