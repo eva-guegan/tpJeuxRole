@@ -1,16 +1,18 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Collections.Generic;
+using tpJeuxRole;
 
 namespace TestSac
 {
     [TestClass]
     class SacTest
     {
-        Stack<ObjetTest> contenuSac = new Stack<ObjetTest>(5);
-        ObjetTest TestObjet = new ObjetTest();
+        Stack<Objet> contenuSac = new Stack<Objet>(5);
+        Objet TestObjet = new Objet("Azerty");
+        
 
         [TestMethod]
-        public void AjouterTest(ObjetTest objet)
+        public void AjouterTest(Objet TestObjet)
         {
             //ARRANGE : initialise le contexte d'appel méthode = objets passés en paramètre
             //Ex : b.AngleIndique = 0;
@@ -18,7 +20,7 @@ namespace TestSac
 
             //ACT : appelle méthode testée
             //Ex : b.rotation(angle);
-            contenuSac.Push(objet);
+            contenuSac.Push(TestObjet);
 
             //ASSERT : vérifie un prédicat
             //Ex : Assert.AreEqual(b.AngleIndique, expectedAngle);

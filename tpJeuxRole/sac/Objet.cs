@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace tpJeuxRole
 {
-    class Objet
+    public class Objet
     {
         private string nom;
 
